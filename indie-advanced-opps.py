@@ -18,7 +18,15 @@ import json
 import requests
 import pprint
 import subprocess
-api = Client('api_7iOEQrFWmHHQvj5lheKv5s.1McfHIo0FSW7upGSGOPBuk')
+from dotenv import load_dotenv
+from pathlib import Path
+import os
+load_dotenv()
+MY_ENV_VAR = os.getenv('MY_ENV_VAR')
+
+# dotenv_path = Path('path/to/.env')
+# load_dotenv(dotenv_path=dotenv_path)
+api = Client(MY_ENV_VAR)
 
 params = {"status_id":"stat_7TC8OKnHcWsdQUVX00HvOW3SzsqJc6zKJuQdfq2DaHu"}
 
@@ -36,5 +44,7 @@ def make_dict(oppList):
     
 make_dict(jrespdataL)
 #h = pprint.pprint(dict)
-final = pprint.pformat(dict)
-subprocess.run("pbcopy", text=True, input=final)
+#final = pprint.pformat(dict)
+nice = '\n'.join("{}: {}".format(k, v) for k, v in dict.items())
+print(nice)
+subprocess.run("pbcopy", text=True, input=nice)
