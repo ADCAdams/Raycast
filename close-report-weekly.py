@@ -19,6 +19,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from pathlib import Path
 import os
+import subprocess
 
 load_dotenv()
 MY_ENV_VAR = os.getenv('MY_ENV_VAR')
@@ -46,6 +47,7 @@ totDic = jrespD['aggregations']['totals']
 
 repDict = {}
 
+repDict["Close"] = ""
 repDict["Opportunities Created"] = totDic["opportunities.created_for.all.count"]
 repDict["Contacted Leads"] = totDic["leads.contacted.all.count"]
 repDict["Emails Sent (Total)"] = totDic["emails.sent.all.count"]
