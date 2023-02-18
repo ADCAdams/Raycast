@@ -59,5 +59,6 @@ repDict["Emails Received"] = totDic["emails.received.all.count"]
 # #removes quotes from dictionary items
 stringDict = '\n'.join("{}: {}".format(k, v) for k, v in repDict.items())
 
+
 # #copies to the clipboard(mac)
 subprocess.run("pbcopy", text=True, input=stringDict)
