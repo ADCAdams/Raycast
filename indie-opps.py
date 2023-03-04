@@ -22,12 +22,13 @@ import os
 
 load_dotenv()
 MY_ENV_VAR = os.getenv('MY_ENV_VAR')
+api = Client(MY_ENV_VAR)
 
 N_DAYS_AGO = 10
 today = datetime.now()    
-n_days_ago = today - timedelta(days=N_DAYS_AGO) #we don't want all of continuation, just those updated in the last 10 days
+n_days_ago = today - timedelta(days=N_DAYS_AGO) #we don't want all of continuation, just those updated in the last x days
 
-api = Client(MY_ENV_VAR)
+
 
 dict = {} #dictionary opps are appended to
 
