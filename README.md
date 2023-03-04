@@ -9,7 +9,8 @@ update the pipeline opportunity status IDs accordingly
 ## close report weekly
 update the user ID accordingly
 
-# Python script
+##
+# Python scripts
 ## Close - update opp notes
 On browser, filter a list of leads using any Close smartview
 export & copy filters as JSON
