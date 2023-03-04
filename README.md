@@ -11,5 +11,8 @@ update the user ID accordingly
 
 # Python script
 ## Close - update opp notes
-grab the list of leads using any web Close smartview, export filters as JSON and replace in the query section.
+On browser, filter a list of leads using any Close smartview
+export & copy filters as JSON
+replace in the 'close-update-opp-notes.py' query section.
 update the text that will be pushed on to all the leads' primary opportunities - don't include date, just write the note
+run script
